@@ -59,8 +59,8 @@ public class Main {
                         break;
 
                     case 6:
-//                        cuboid cuboidCal = new cuboid();
-//                        cuboidCal.calculate();
+                        cuboid cuboidCal = new cuboid();
+                        cuboidCal.calculate();
                         break;
 
                     case 7:
