@@ -44,8 +44,8 @@ public class Main {
                         break;
 
                     case 3:
-//                        rectangle rectangleCal = new rectangle();
-//                        rectangleCal.calculate();
+                        rectangle rectangleCal = new rectangle();
+                        rectangleCal.calculate();
                         break;
 
                     case 4:
