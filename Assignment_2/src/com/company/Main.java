@@ -54,8 +54,8 @@ public class Main {
                         break;
 
                     case 5:
-//                        cube cubeCal = new cube();
-//                        cubeCal.calculate();
+                        cube cubeCal = new cube();
+                        cubeCal.calculate();
                         break;
 
                     case 6:
