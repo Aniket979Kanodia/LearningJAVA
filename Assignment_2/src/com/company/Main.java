@@ -69,8 +69,8 @@ public class Main {
                         break;
 
                     case 8:
-//                        cylinder cylinderCal = new cylinder();
-//                        cylinderCal.calculate();
+                        cylinder cylinderCal = new cylinder();
+                        cylinderCal.calculate();
                         break;
                     default:
                         System.out.println("Invalid Selection");
