@@ -39,8 +39,8 @@ public class Main {
                         break;
 
                     case 2:
-//                        square squareCal = new square();
-//                        squareCal.calculate();
+                        square squareCal = new square();
+                        squareCal.calculate();
                         break;
 
                     case 3:
