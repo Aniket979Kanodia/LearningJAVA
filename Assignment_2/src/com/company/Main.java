@@ -49,8 +49,8 @@ public class Main {
                         break;
 
                     case 4:
-//                        triangle triangleCal = new triangle();
-//                        triangleCal.calculate();
+                        triangle triangleCal = new triangle();
+                        triangleCal.calculate();
                         break;
 
                     case 5:
