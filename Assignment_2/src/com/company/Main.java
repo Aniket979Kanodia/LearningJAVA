@@ -64,8 +64,8 @@ public class Main {
                         break;
 
                     case 7:
-//                        cone coneCal = new cone();
-//                        coneCal.calculate();
+                        cone coneCal = new cone();
+                        coneCal.calculate();
                         break;
 
                     case 8:
