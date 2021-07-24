@@ -34,8 +34,8 @@ public class Main {
                 switch (choice) {
 
                     case 1:
-//                        circle circleCal = new circle();
-//                        circleCal.calculate();
+                        circle circleCal = new circle();
+                        circleCal.calculate();
                         break;
 
                     case 2:
