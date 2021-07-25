@@ -9,8 +9,14 @@ public class cone {
             double radius, height, slantHeight;
             System.out.println("Enter radius of cone : ");
             radius = sin.nextDouble();
+            if(radius<=0){
+                throw new figureDoNotExistException("Exception");
+            }
             System.out.println("Enter height of cone : ");
             height = sin.nextDouble();
+            if(height<=0){
+                throw new figureDoNotExistException("Exception");
+            }
             slantHeight = Math.sqrt((height * height) + (radius * radius));
             double baseArea = 3.14 * radius * radius;
             double volume = (3.14 * radius * radius * height) / 3;
@@ -22,6 +28,8 @@ public class cone {
             System.out.println("Volume of cone : " + volume);
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
+        }catch(figureDoNotExistException e){
+            System.out.println("Value entered is invalid");
         }
     }
 

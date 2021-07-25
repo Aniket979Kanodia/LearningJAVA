@@ -9,6 +9,9 @@ public class cube {
             double side;
             System.out.println("Enter length of side of cube : ");
             side = sin.nextDouble();
+            if(side<=0){
+                throw new figureDoNotExistException("Exception");
+            }
             double totalSurfaceArea, faceArea, volume;
             faceArea = side * side;
             totalSurfaceArea = faceArea * 6;
@@ -19,6 +22,8 @@ public class cube {
             System.out.println("Volume of cube : " + volume);
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
+        }catch(figureDoNotExistException e){
+            System.out.println("Value entered is invalid");
         }
 
     }

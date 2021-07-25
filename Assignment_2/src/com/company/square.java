@@ -10,6 +10,9 @@ public class square {
         try {
             System.out.println("Enter side of square : ");
             side = sin.nextFloat();
+            if(side<=0){
+                throw new figureDoNotExistException("Exception");
+            }
             float area = side * side;
             float perimeter = 4 * side;
             System.out.println("Area of the square : " + area);
@@ -18,6 +21,8 @@ public class square {
             System.out.println();
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
+        }catch(figureDoNotExistException e){
+            System.out.println("Value entered is invalid");
         }
     }
 }

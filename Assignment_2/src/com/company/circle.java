@@ -8,6 +8,10 @@ public class circle {
         try {
             System.out.println("Enter radius of circle :");
             radius = sin.nextFloat();
+            if(radius<=0){
+                throw new figureDoNotExistException("Exception");
+            }
+
 
             float area, circumference;
 
@@ -21,6 +25,8 @@ public class circle {
             System.out.println();
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
+        }catch(figureDoNotExistException e){
+            System.out.println("Value entered is invalid");
         }
     }
 

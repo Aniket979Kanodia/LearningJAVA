@@ -1,6 +1,11 @@
 package com.company;
 
 import java.util.*;
+class figureDoNotExistException extends Exception{
+    figureDoNotExistException(String s){
+        super(s);
+    }
+}
 public class Main {
 
     public static void printMenu(){

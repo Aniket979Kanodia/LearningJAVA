@@ -9,8 +9,14 @@ public class rectangle {
 
             System.out.println("Enter length of rectangle :");
             length = sin.nextFloat();
+            if(length<=0){
+                throw new figureDoNotExistException("Exception");
+            }
             System.out.println("Enter width of rectangle :");
             width = sin.nextFloat();
+            if(width<=0){
+                throw new figureDoNotExistException("Exception");
+            }
 
             area = length * width;
             perimeter = 2 * (length + width);
@@ -21,6 +27,8 @@ public class rectangle {
             System.out.println();
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
+        }catch(figureDoNotExistException e){
+            System.out.println("Value entered is invalid");
         }
     }
 }

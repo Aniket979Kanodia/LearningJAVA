@@ -8,10 +8,19 @@ public class cuboid {
     try {
         System.out.println("Enter length of rectangle : ");
         length = sin.nextDouble();
+        if(length<=0){
+            throw new figureDoNotExistException("Exception");
+        }
         System.out.println("Enter breadth of rectangle : ");
-        breadth = sin.nextDouble();
+       breadth = sin.nextDouble();
+        if(breadth<=0){
+            throw new figureDoNotExistException("Exception");
+        }
         System.out.println("Enter height of rectangle : ");
         height = sin.nextDouble();
+        if(height<=0){
+            throw new figureDoNotExistException("Exception");
+        }
 
         double areaFace1, areaFace2, areaFace3, totalSurfaceArea, volume;
         areaFace1 = length * breadth;
@@ -28,6 +37,8 @@ public class cuboid {
         System.out.println("Volume of cuboid : " + volume);
     }catch(InputMismatchException e){
         System.out.println("Invalid Input : " + sin.next());
+    }catch(figureDoNotExistException e){
+        System.out.println("Value entered is invalid");
     }
 
     }
