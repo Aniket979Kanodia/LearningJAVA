@@ -67,11 +67,18 @@ public class Main {
                     int val = urlWordsCount.get(j-c-1);
                     String s= getKey(eachUrlCount,val);
                     System.out.println(s + " : " + val);
+                    if(finalCount.containsKey(s))
+                    {
+                        int temp = finalCount.get(s);
+                        finalCount.replace(s,temp+val);
+                    }
+                    else{
+                        finalCount.put(s,val);
+                    }
+                    eachUrlCount.remove(s);
                 }
-
             }
         }
-
     }
     public static <K, V> K getKey(Map<K, V> map, V value)
     {
