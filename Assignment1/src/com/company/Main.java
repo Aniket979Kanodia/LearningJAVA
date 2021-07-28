@@ -58,11 +58,29 @@ public class Main {
                     if (s == null) {
                         break;
                     }
-                    System.out.println(s +" - " + Collections.frequency(UrlContent, s));
+                    eachUrlCount.put(s,Collections.frequency(UrlContent, s));
+                    urlWordsCount.add(Collections.frequency(UrlContent, s));
 
                 }
+                Collections.sort(urlWordsCount);
+                for(int c=0;c<3;c++){
+                    int val = urlWordsCount.get(j-c-1);
+                    String s= getKey(eachUrlCount,val);
+                    System.out.println(s + " : " + val);
+                }
+
             }
         }
 
+    }
+    public static <K, V> K getKey(Map<K, V> map, V value)
+    {
+        for (Map.Entry<K, V> entry: map.entrySet())
+        {
+            if (value.equals(entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 }
