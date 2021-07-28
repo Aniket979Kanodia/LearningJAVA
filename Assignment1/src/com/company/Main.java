@@ -78,6 +78,19 @@ public class Main {
                     eachUrlCount.remove(s);
                 }
             }
+
+        }
+        Collection<Integer> values = finalCount.values();
+        ArrayList<Integer> listOfValues = new ArrayList<>(values);
+        Collections.sort(listOfValues);
+        System.out.println();
+        System.out.println("#Output 2");
+        System.out.println();
+        int l= listOfValues.size()-1;
+        for(int y=l;y>=0;y--){
+            String s = getKey(finalCount, listOfValues.get(y));
+            System.out.println(s+ " : "+ listOfValues.get(y));
+            fileContent.remove(s);
         }
     }
     public static <K, V> K getKey(Map<K, V> map, V value)
