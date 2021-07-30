@@ -82,6 +82,29 @@ public class Main {
             newEmployee.setDob(sin.next());
             data.put(employeeCount,newEmployee);
         }
+        else if(choice == 2){
+            int empId,confirmation=0;
+            System.out.println("Enter ID to employee to delete :");
+            empId = sin.nextInt();
+            employee e = new employee();
+            if(data.containsKey(empId)){
+                e= data.get(empId);
+                System.out.println("Details of employee");
+                System.out.println("ID :" + empId);
+                System.out.println("Name :" + e.getName());
+                System.out.println("Email ID :" + e.getEmailAddress());
+                System.out.println("Age :" + e.getAge());
+                System.out.println("DOB :" + e.getDob());
+                System.out.println("To delete press 1 else press 0");
+                confirmation = sin.nextInt();
+                if(confirmation == 1) {
+                    data.remove(empId);
+                }
+            }
+            else{
+                System.out.println("ID doesn't exist");
+            }
+        }
 
         FileWriter Writer = new FileWriter(detailFile);
         for(Map.Entry<Integer, employee> entry:data.entrySet())
