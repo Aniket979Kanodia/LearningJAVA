@@ -1,20 +1,10 @@
 package com.company;
 
 public class employee {
-    private int id;
     private String name;
     private String emailAddress;
     private String age;
     private String dob;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getDob() {
         return dob;
