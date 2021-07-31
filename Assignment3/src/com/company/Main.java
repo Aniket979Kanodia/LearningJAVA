@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Main {
 
@@ -103,6 +100,51 @@ public class Main {
             }
             else{
                 System.out.println("ID doesn't exist");
+            }
+        }
+        else if(choice==3){
+            System.out.println("Select the criteria to sort :");
+            System.out.println("1. Name");
+            System.out.println("2. Age");
+            System.out.println("3. Date of Birth");
+            System.out.println("4. Email address");
+            int criteria = sin.nextInt();
+            Map<String,employee> sortedData= new TreeMap<>();
+            if(criteria==1){
+                for(Map.Entry<Integer, employee> entry:data.entrySet())
+                {
+                    employee e=entry.getValue();
+                    sortedData.put(e.getName(),e);
+                }
+            }
+            else if(criteria==2){
+                for(Map.Entry<Integer, employee> entry:data.entrySet())
+                {
+                    employee e=entry.getValue();
+                    sortedData.put(e.getAge(),e);
+                }
+            }
+            else if(criteria == 3){
+                for(Map.Entry<Integer, employee> entry:data.entrySet())
+                {
+                    employee e=entry.getValue();
+                    sortedData.put(e.getDob(),e);
+                }
+            }
+            else if(criteria == 4){
+                for(Map.Entry<Integer, employee> entry:data.entrySet())
+                {
+                    employee e=entry.getValue();
+                    sortedData.put(e.getEmailAddress(),e);
+                }
+            }
+            for(Map.Entry<String, employee> entry:sortedData.entrySet())
+            {
+                employee e=entry.getValue();
+                System.out.println(" Details:");
+                System.out.println(e.getName()+" "+e.getEmailAddress()+" "+e.getAge()+" "+e.getDob());
+
+
             }
         }
 
