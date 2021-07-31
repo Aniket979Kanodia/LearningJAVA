@@ -45,14 +45,13 @@ public class Main {
             employee e=entry.getValue();
             System.out.println(key+" Details:");
             System.out.println(e.getName()+" "+e.getEmailAddress()+" "+e.getAge()+" "+e.getDob());
-
-
         }
 
         System.out.println("Please select required action : ");
         System.out.println("1. Add");
         System.out.println("2. Delete");
         System.out.println("3. Search");
+        System.out.println("4. Sort");
 
         int choice;
         choice= sin.nextInt();
@@ -103,6 +102,31 @@ public class Main {
             }
         }
         else if(choice==3){
+            System.out.println("Enter first name of employee to search :");
+            String firstName = sin.next();
+            System.out.println("Enter last name of employee to search :");
+            String lastName = sin.next();
+            String Name = firstName + " " + lastName;
+            int test=0;
+            for(Map.Entry<Integer, employee> entry:data.entrySet())
+            {
+                employee e=entry.getValue();
+                if(e.getName().equals(Name)){
+                    System.out.println("Match found");
+                    System.out.println("Name : " + e.getName());
+                    System.out.println("Email ID : " + e.getEmailAddress());
+                    System.out.println("Age : " + e.getAge());
+                    System.out.println("DOB : " + e.getDob());
+                    test =1;
+                    break;
+                }
+            }
+            if(test == 0){
+                System.out.println("No match found");
+            }
+
+        }
+        else if(choice==4){
             System.out.println("Select the criteria to sort :");
             System.out.println("1. Name");
             System.out.println("2. Age");
@@ -141,8 +165,8 @@ public class Main {
             for(Map.Entry<String, employee> entry:sortedData.entrySet())
             {
                 employee e=entry.getValue();
-                System.out.println(" Details:");
-                System.out.println(e.getName()+" "+e.getEmailAddress()+" "+e.getAge()+" "+e.getDob());
+                System.out.println("Details:");
+                System.out.println("Name :" + e.getName()+"\nEmail Address : "+e.getEmailAddress()+"\nAge : "+e.getAge()+"\nDOB : "+e.getDob());
 
 
             }
@@ -153,12 +177,10 @@ public class Main {
         {
             int key=entry.getKey();
             employee e=entry.getValue();
-//            System.out.println(key+" Details:");
             Writer.write(e.getName() + "," + e.getEmailAddress() + "," + e.getAge() + "," + e.getDob()+",");
-
-
         }
         Writer.close();
+        if(choice==1 || choice ==2)
         System.out.println("File updated successfully");
     }
 }
