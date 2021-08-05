@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class circle {
+public class Circle {
     public void calculate(){
         Scanner sin = new Scanner(System.in);
         float radius;
@@ -9,7 +9,7 @@ public class circle {
             System.out.println("Enter radius of circle :");
             radius = sin.nextFloat();
             if(radius<=0){
-                throw new figureDoNotExistException("Exception");
+                throw new InvalidFigureException("Exception");
             }
 
 
@@ -25,7 +25,7 @@ public class circle {
             System.out.println();
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
-        }catch(figureDoNotExistException e){
+        }catch(InvalidFigureException e){
             System.out.println("Value entered is invalid");
         }
     }

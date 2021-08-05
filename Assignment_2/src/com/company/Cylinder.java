@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 
 
-public class cylinder {
+public class Cylinder {
     Scanner sin = new Scanner(System.in);
     public void calculate(){
         double radius , height;
@@ -11,12 +11,12 @@ public class cylinder {
 
             radius = sin.nextDouble();
             if(radius<=0){
-                throw new figureDoNotExistException("Exception");
+                throw new InvalidFigureException("Exception");
             }
             System.out.println("Enter height of cylinder : ");
             height = sin.nextDouble();
             if(height<=0){
-                throw new figureDoNotExistException("Exception");
+                throw new InvalidFigureException("Exception");
             }
 
             double baseArea = 3.14 * radius * radius;
@@ -28,7 +28,7 @@ public class cylinder {
             System.out.println("Volume of cylinder : " + volume);
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
-        }catch(figureDoNotExistException e){
+        }catch(InvalidFigureException e){
             System.out.println("Value entered is invalid");
         }
 

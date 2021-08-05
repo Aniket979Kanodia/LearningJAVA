@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class square {
+public class Square {
     Scanner sin = new Scanner(System.in);
 
 
@@ -11,7 +11,7 @@ public class square {
             System.out.println("Enter side of square : ");
             side = sin.nextFloat();
             if(side<=0){
-                throw new figureDoNotExistException("Exception");
+                throw new InvalidFigureException("Exception");
             }
             float area = side * side;
             float perimeter = 4 * side;
@@ -21,7 +21,7 @@ public class square {
             System.out.println();
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
-        }catch(figureDoNotExistException e){
+        }catch(InvalidFigureException e){
             System.out.println("Value entered is invalid");
         }
     }

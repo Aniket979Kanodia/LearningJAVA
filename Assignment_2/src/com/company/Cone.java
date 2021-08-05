@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 import java.math.*;
 
-public class cone {
+public class Cone {
     Scanner sin = new Scanner(System.in);
     public void calculate(){
         try {
@@ -10,12 +10,12 @@ public class cone {
             System.out.println("Enter radius of cone : ");
             radius = sin.nextDouble();
             if(radius<=0){
-                throw new figureDoNotExistException("Exception");
+                throw new InvalidFigureException("Exception");
             }
             System.out.println("Enter height of cone : ");
             height = sin.nextDouble();
             if(height<=0){
-                throw new figureDoNotExistException("Exception");
+                throw new InvalidFigureException("Exception");
             }
             slantHeight = Math.sqrt((height * height) + (radius * radius));
             double baseArea = 3.14 * radius * radius;
@@ -28,7 +28,7 @@ public class cone {
             System.out.println("Volume of cone : " + volume);
         }catch(InputMismatchException e){
             System.out.println("Invalid Input : " + sin.next());
-        }catch(figureDoNotExistException e){
+        }catch(InvalidFigureException e){
             System.out.println("Value entered is invalid");
         }
     }

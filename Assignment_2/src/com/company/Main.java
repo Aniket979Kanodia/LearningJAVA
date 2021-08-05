@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.*;
-class figureDoNotExistException extends Exception{
+class InvalidFigureException extends Exception{
     figureDoNotExistException(String s){
         super(s);
     }
@@ -24,35 +24,35 @@ public class Main {
     public static void makeChoice(int choice){
         switch (choice) {
             case 1 -> {
-                circle circleCal = new circle();
+                Circle circleCal = new Circle();
                 circleCal.calculate();
             }
             case 2 -> {
-                square squareCal = new square();
+                Square squareCal = new Square();
                 squareCal.calculate();
             }
             case 3 -> {
-                rectangle rectangleCal = new rectangle();
+                Rectangle rectangleCal = new Rectangle();
                 rectangleCal.calculate();
             }
             case 4 -> {
-                triangle triangleCal = new triangle();
+                Triangle triangleCal = new Triangle();
                 triangleCal.calculate();
             }
             case 5 -> {
-                cube cubeCal = new cube();
+                Cube cubeCal = new Cube();
                 cubeCal.calculate();
             }
             case 6 -> {
-                cuboid cuboidCal = new cuboid();
+                Cuboid cuboidCal = new Cuboid();
                 cuboidCal.calculate();
             }
             case 7 -> {
-                cone coneCal = new cone();
+                Cone coneCal = new Cone();
                 coneCal.calculate();
             }
             case 8 -> {
-                cylinder cylinderCal = new cylinder();
+                Cylinder cylinderCal = new Cylinder();
                 cylinderCal.calculate();
             }
             default -> System.out.println("Invalid Selection");

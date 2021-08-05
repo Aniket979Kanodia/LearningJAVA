@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class cuboid {
+public class Cuboid {
     Scanner sin = new Scanner(System.in);
     public void calculate(){
         double length , breadth ,height;
@@ -14,12 +14,12 @@ public class cuboid {
         System.out.println("Enter breadth of rectangle : ");
        breadth = sin.nextDouble();
         if(breadth<=0){
-            throw new figureDoNotExistException("Exception");
+            throw new InvalidFigureException("Exception");
         }
         System.out.println("Enter height of rectangle : ");
         height = sin.nextDouble();
         if(height<=0){
-            throw new figureDoNotExistException("Exception");
+            throw new InvalidFigureException("Exception");
         }
 
         double areaFace1, areaFace2, areaFace3, totalSurfaceArea, volume;
@@ -37,7 +37,7 @@ public class cuboid {
         System.out.println("Volume of cuboid : " + volume);
     }catch(InputMismatchException e){
         System.out.println("Invalid Input : " + sin.next());
-    }catch(figureDoNotExistException e){
+    }catch(InvalidFigureException e){
         System.out.println("Value entered is invalid");
     }
 
