@@ -1,8 +1,12 @@
 package com.company;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class SerializationTest {
+public class SerializationTest implements Serializable {
 
     public static void main(String[] args) {
         Student student1 = new Student();
@@ -51,6 +55,18 @@ public class SerializationTest {
         data.put("student2",student2);
         data.put("student3",student3);
         data.put("student4",student4);
+
+        try{
+            FileOutputStream fOut = new FileOutputStream("..\\Assignment5\\Output2.ser");
+            ObjectOutputStream OOut = new ObjectOutputStream(fOut);
+            OOut.writeObject(data);
+            OOut.close();
+            fOut.close();
+            System.out.println("!! Records stored successfully !!");
+
+        }catch (IOException e){
+            System.out.println("Exception : "+e);
+        }
 
     }
 }
