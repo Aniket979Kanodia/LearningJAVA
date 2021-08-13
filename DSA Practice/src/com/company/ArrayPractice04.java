@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.Arrays;
+
+public class ArrayPractice04 {
+    public static void swap(int[] A,int i,int j){
+        int temp =A[i];
+        A[i]=A[j];
+        A[j]=temp;
+    }
+
+    public static void Partition(int[] A){
+        int start = 0,mid =0;
+        int pivot =1;
+        int end= A.length-1;
+
+        while(mid<=end){
+            if(A[mid]<pivot){
+                swap(A,start,mid);
+                start++;
+                mid++;
+            }
+            else if(A[mid]>pivot){
+                swap(A,mid,end);
+                end--;
+            }
+            else{
+                mid++;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int A[] = {  1, 2, 2, 1, 0, 0, 2, 0, 1, 1, 0 };
+        Partition(A);
+        System.out.println(Arrays.toString(A));
+
+
+
+    }
+}
