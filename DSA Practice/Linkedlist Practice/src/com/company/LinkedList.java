@@ -45,6 +45,55 @@ public class LinkedList {
         prevNode.next=newNode;
     }
 
+    public void deleteByKey(int key){
+        Node currentNode = head,prev = null;
+        if(currentNode!=null && currentNode.data==key){
+            head = currentNode.next;
+
+            System.out.println(key + " found and deleted");
+            return;
+        }
+        while(currentNode!=null && currentNode.data!=key){
+            prev = currentNode;
+            currentNode =currentNode.next;
+
+        }
+        if(currentNode!=null){
+            prev.next=currentNode.next;
+            System.out.println(key + " found and deleted");
+        }
+        if(currentNode==null){
+            System.out.println(key +" not found");
+        }
+        return;
+    }
+    public void deleteAtposition(int index){
+        Node currentNode = head,prev=null;
+        if(index==0&& currentNode!=null){
+            head=currentNode.next;
+            System.out.println("Element at position "+ index+" is deleted");
+        }
+        int count =0;
+        while(currentNode!=null){
+            if(count==index){
+                prev.next=currentNode.next;
+                System.out.println("Element at position "+ index+" is deleted");
+            break;
+
+            }
+            else{
+                prev = currentNode;
+                currentNode=currentNode.next;
+                count++;
+            }
+        }
+        if(currentNode==null){
+            System.out.println("No element was found at position " + index);
+        }
+        return;
+    }
+
+
     public void printList(){
         Node CurrNode = head;
 
@@ -68,6 +117,8 @@ public class LinkedList {
         list.insert(9);
         list.insert(10);
         list.insertAfter(list.head.next,111 );
+        list.deleteByKey(1);
+        list.deleteAtposition(7);
 
         list.printList();
     }
