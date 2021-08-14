@@ -103,18 +103,39 @@ public class LinkedList {
             if(newNode.data == element){
                 return index;
             }
-
             index++;
             newNode=newNode.next;
         }
-
         return -1;
+    }
+    public void bubbleSort(){
+        Node current = head,index = null;
+
+        int temp;
+
+        if(head == null){
+            return;
+        }
+        else{
+            while(current!=null){
+                index = current.next;
+
+                while(index!=null){
+                    if(current.data>index.data){
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
+                }
+                current=current.next;
+            }
+        }
     }
 
 
     public void printList(){
         Node CurrNode = head;
-
         System.out.println("LinkedList: ");
         while(CurrNode != null){
             System.out.print(CurrNode.data + " ");
