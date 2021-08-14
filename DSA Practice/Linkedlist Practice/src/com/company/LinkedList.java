@@ -93,6 +93,24 @@ public class LinkedList {
         return;
     }
 
+    public int search(int element){
+        if(head==null){
+            return -1;
+        }
+        int index=0;
+        Node newNode = head;
+        while(newNode!=null){
+            if(newNode.data == element){
+                return index;
+            }
+
+            index++;
+            newNode=newNode.next;
+        }
+
+        return -1;
+    }
+
 
     public void printList(){
         Node CurrNode = head;
@@ -119,6 +137,13 @@ public class LinkedList {
         list.insertAfter(list.head.next,111 );
         list.deleteByKey(1);
         list.deleteAtposition(7);
+        int elementPosition = list.search(3);
+        if(elementPosition==-1){
+            System.out.println("Element not found");
+        }
+        else{
+            System.out.println("Element found at position: "+elementPosition);
+        }
 
         list.printList();
     }
