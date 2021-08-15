@@ -4,7 +4,7 @@ public class LinkedList {
 
     Node head;
 
-    class Node{
+    public class Node{
         int data;
         Node next;
         Node(int d){
@@ -107,6 +107,16 @@ public class LinkedList {
             newNode=newNode.next;
         }
         return -1;
+    }
+
+    public int length(){
+        Node current = head;
+        int count =0;
+        while(current!=null){
+            count++;
+            current=current.next;
+        }
+        return count;
     }
     public void bubbleSort(){
         Node current = head,index = null;
